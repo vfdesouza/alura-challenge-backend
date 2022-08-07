@@ -8,8 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "TB_EXPENSES")
-
-public @Getter @Setter class Expenses extends Revenues{
+public @Getter @Setter final class Expenses extends CentralClass{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +17,8 @@ public @Getter @Setter class Expenses extends Revenues{
     public Expenses() {
     }
 
-    public Expenses(Long id, String description, Double value, Date date) {
-        super(id, description, value, date);
+    public Expenses(String description, Double value, Date date) {
+        super(description, value, date);
     }
+
 }

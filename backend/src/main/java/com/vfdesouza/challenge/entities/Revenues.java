@@ -8,21 +8,16 @@ import java.util.Date;
 
 @Entity
 @Table(name = "TB_REVENUES")
-public @Getter @Setter class Revenues {
-
+public @Getter @Setter final class Revenues extends CentralClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
-    private Double value;
-    private Date date;
 
     public Revenues() {
     }
-    public Revenues(Long id, String description, Double value, Date date) {
-        this.id = id;
-        this.description = description;
-        this.value = value;
-        this.date = date;
+
+    public Revenues(String description, Double value, Date date) {
+        super(description, value, date);
     }
+
 }
